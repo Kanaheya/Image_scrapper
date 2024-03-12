@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Search and Download</title>
+    
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
+    </head>
+    
+<body>
+    <h1>Image Search and Download</h1>
+    
+    <form method="post">
+        <label for="query">Enter Search Query:</label>
+        <input type="text" id="query" name="query" required>
+        
+    </form>
+    {% if image_files %}
+        <h2>Downloaded Images:</h2>
+        <div>
+            {% for image in image_files %}
+                <img src="{{ url_for('static', filename='downloaded_images/' + image) }}" alt="{{ image }}">
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
