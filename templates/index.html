@@ -7,16 +7,18 @@
         <title>Image Search and Download</title>
     
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
-
+        
     </head>
     
 <body>
+
     <h1>Image Search and Download</h1>
-    
+      
     <form method="post">
         <label for="query">Enter Search Query:</label>
-        <input type="text" id="query" name="query" required>
+        <div class="input-wrapper">
+            <input type="text" id="query" placeholder="Type here..." name="query" class="input">
+        </div>
         
     </form>
     {% if image_files %}
